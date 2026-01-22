@@ -1,0 +1,8 @@
+ls: shows the list of files
+cp: copy one file to other
+mv: move/rename
+rm: removes the file
+mkdir: creates a folder
+cd: change directory
+rmdir: remove folder
+clear
