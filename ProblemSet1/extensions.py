@@ -1,10 +1,14 @@
 file = input("Filename: ")
-name, extension = file.split(".")
+name, extension = file.strip().lower().split(".")
 
 match extension:
-    case "jpg" | "png" | "gif" | "jpeg":
+    case "png" | "gif" | "jpeg":
         print("image/" + extension)
-    case "pdf"| "txt"| "zip":
+    case "jpg":
+        print("image/jpeg")
+    case "pdf"| "zip":
         print("application/" + extension)
+    case "txt":
+        print("text/plain")
     case _:
         print("application/octet-stream")
