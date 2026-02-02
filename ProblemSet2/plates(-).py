@@ -10,44 +10,22 @@ def is_valid(s):
 
     flag = True
 
-    if s[0:2].isalpha(): # check1
-        flag = True
-    else:
+    if not (2 <= len(s) <= 6): # check1
         return False
 
-    if len(s) <= 6: # check2
-        flag = True
-    else:
+    if not s[0:2].isalpha(): # check2
+        return False
+    
+    if not s.isalnum(): # check3
         return False
 
-    count = 0
-    for i in s: # check3
-        if i.isalpha():
-            count += 1
-    if count < 2:
-        return False
-    else:
-        flag = True
-
-    if s.isalnum(): # check4
-        flag = True   
-    else:   
-        return False
-
-    index = s.find("0")
-    check = s[:index]
-    if check.isalpha():
-        return False
-    else:
-        flag = True
-
-    if s.isalpha(): #check6
-        flag = True
-    else:
-        if s[-1:].isdigit():
-            flag = True
-        else:
-            return False
+    for i in range(len(s)): 
+        if s[i].isdigit():
+            if s[i] == "0":
+                return False
+            if not s[i:].isdigit():
+                return False
+            break
         
     return flag
 
